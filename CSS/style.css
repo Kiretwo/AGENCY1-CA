@@ -72,6 +72,8 @@ main{
 }
 
 .game{
+    text-decoration: none;
+    color: black;
     font-size: 1.3rem;
     display: flex;
     border: solid #FFA899 2px;
