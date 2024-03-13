@@ -32,23 +32,32 @@ footer nav ul {
     justify-content: space-around;
     align-items: center;
     height: 20rem;
-
 }
 
 footer nav ul li {
     list-style: none;
     display: flex;
+    align-items: center;
 }
 
 footer nav ul li a {
     color: #ffff;
     text-decoration: none;
     font-size: 1.5rem;
-    font-family: "Lalezar", system-ui;
-    font-weight: 400;
-    font-style: normal;
+    padding: 0 1rem;
 }
 
 footer nav ul li a:visited {
     color: #ffff;
+}
+
+footer nav ul li a:hover{
+    transform: scale(1.1);
+    transition: .4s;
+}
+
+.active {
+    border-bottom: 3px solid black;
+    font-size: 1.7rem;
+    font-weight: 600;
 }
