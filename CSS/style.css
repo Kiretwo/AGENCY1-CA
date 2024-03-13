@@ -121,6 +121,8 @@ header {
     display: flex;
     justify-content: space-between;
 		height: 100px;
+		align-items: center;
+		padding: 0px 15px;
 }
 .logo-container {
     
@@ -140,11 +142,42 @@ header {
 }
 header nav ul li a{
 	text-decoration: none;
+    padding: 0px 6px;
+		color: #262626;
+		font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+		font-weight: 700;
+		font-size: 1rem;
 }
 header nav ul li {
 	display: inline-block;
 }
+header nav ul li:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.sidebar{
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	width: 250px;
+	z-index: 999;
+	background-color: #448067;
+	box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+.sidebar li{
+	margin: 20px 20px;
+	width: 100%;
+}
+.sidebar a{
+	width: 100%;
+}
 
+/* MEDIA QUERIES */
 @media screen and (max-width: 700px) {
     footer nav ul {
         flex-direction: column;
