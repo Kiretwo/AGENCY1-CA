@@ -66,8 +66,8 @@ main{
     gap: 2.5rem;
     justify-content: center;
     display: grid;
-    grid-template-columns: 250px 250px;
-    grid-template-rows: 250px 250px;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 300px 300px;
     padding: 2rem;
 }
 
@@ -76,9 +76,14 @@ main{
     color: black;
     font-size: 1.3rem;
     display: flex;
-    border: solid #FFA899 2px;
     border-radius: 0.5rem;
     background-color: #D9D9D9;
+    transition: ease 200ms;
+}
+
+.game:hover {
+    transform: scale(1.1); /* Scale up on hover */
+    border: solid #FFA899 2px;
 }
 
 .game:first-child{
