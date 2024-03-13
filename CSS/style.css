@@ -119,9 +119,22 @@ footer nav ul li a:hover{
 header {
     background-color: #448067;
     display: flex;
+    justify-content: space-between;
 }
 .logo-container {
     
+}
+.logo-text {
+    display: inline-block;
+    text-decoration: none;
+    font-family: "Luckiest Guy";
+}
+.logo-text-tool {
+    color: #262626;
+}
+.logo-text-box {
+    margin-left: -4px;
+    color: #FFA899;
 }
 
 @media screen and (max-width: 700px) {
