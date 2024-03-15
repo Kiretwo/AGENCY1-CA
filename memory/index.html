@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lalezar&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/CSS/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <div id="logo-container">
+          <a href="/"><div class="logo-text logo-text-tool">Tool</div></a>
+          <a href="/"><div class="logo-text logo-text-box">Box</div></a>
+        </div>
+      </div>
+      <nav>
+        <ul class="sidebar">
+          <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/memory/">Memory Game</a></li>
+          <li><a href="/quiz/">Quiz Game</a></li>
+          <li><a href="/character/">Character Creator</a></li>
+        </ul>
+        <ul>
+          <li class="hideOnMobile"><a href="/">Home</a></li>
+          <li class="hideOnMobile"><a href="/memory/">Memory Game</a></li>
+          <li class="hideOnMobile"><a href="/quiz/">Quiz Game</a></li>
+          <li class="hideOnMobile"><a href="/character/">Character Creator</a></li>
+          <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+    </main>
+
+    <footer>
+      <nav class="footer-nav">
+        <ul class="lalezar-regular">
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/memory/">Memory game</a></li>
+          <li><a href="/quiz/">Quiz</a></li>
+          <li><a href="/character/">Character creator</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+    <script>
+      function showSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'flex'
+      }
+      function hideSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'none'
+      }
+    </script>
+  </body>
+</html>
