@@ -74,6 +74,30 @@
 }
 
 
+
+
+
+
+/* ------GAME------ */
+
+section {
+    text-align: center;
+}
+.answer {
+            color: black;
+            text-decoration: none;
+            padding: 80px 15px;
+            margin: 50px;
+            font-size: 1.3rem;
+            
+            text-align: center;
+}
+
+
+
+
+
+
 /* @media screen and (max-width: 1330px) {
     .selector a:last-of-type {
             margin-right: auto;
