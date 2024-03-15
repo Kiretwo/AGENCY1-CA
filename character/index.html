@@ -39,21 +39,21 @@
     <main>
         <div class="char-box">
             <p>Character craft</p>
-            <input type="checkbox"> Male
-            <input type="checkbox"> Female
+            <input type="checkbox" class="gender-checkbox" data-gender="Male"> Male
+            <input type="checkbox" class="gender-checkbox" data-gender="Female"> Female
             <div>
                 <div>
                     <p>Name</p>
                     <p>Write your name: <input type="text"></p>
                 </div>
                 <p>Race</p>
-                <input type="checkbox"> Human
-                <input type="checkbox"> Elf
-                <input type="checkbox"> Gnome
-                <input type="checkbox"> Hafling
-                <input type="checkbox"> Tiefling
-                <input type="checkbox"> Dragonborn
-                <input type="checkbox"> Orc
+                <input type="checkbox" class="race-checkbox" data-race="Human"> Human
+                <input type="checkbox" class="race-checkbox" data-race="Elf"> Elf
+                <input type="checkbox" class="race-checkbox" data-race="Gnome"> Gnome
+                <input type="checkbox" class="race-checkbox" data-race="Halfling"> Halfling
+                <input type="checkbox" class="race-checkbox" data-race="Tiefling"> Tiefling
+                <input type="checkbox" class="race-checkbox" data-race="Dragonborn"> Dragonborn
+                <input type="checkbox" class="race-checkbox" data-race="Orc"> Orc
             </div>
             <div>
                 <p>Stats</p>
@@ -84,5 +84,6 @@
           </ul>
         </nav>
       </footer>
+      <script src="/JS/character/utils.js"></script>
   </body>
 </html>
