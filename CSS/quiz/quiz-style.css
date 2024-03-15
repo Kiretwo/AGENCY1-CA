@@ -75,16 +75,13 @@
 
 
 /* @media screen and (max-width: 1330px) {
-    .selector {
+    .selector a:last-of-type {
+            margin-right: auto;
+        }
+    
+    
+}
 
-    }
-    .selector:last-child {
-        justify-content: flex-start;
-    }
-} */
-/* 
 @media screen and (max-width: 1000px) {
-    .selector{
-
-    }
+    
 } */
