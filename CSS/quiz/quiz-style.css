@@ -1,6 +1,8 @@
+
 .front-intro-container {
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
 }
 
 .home-image { 
@@ -67,9 +69,8 @@
 
 .random {
     
-     background: rgb(104, 208, 0);
-     background: linear-gradient(194deg, rgba(104, 208, 0, 1) 0%, rgba(90, 139, 214, 1) 51%, rgba(234, 26, 26, 1) 100%);
-
+    background: rgb(198, 133, 137);
+    background: linear-gradient(270deg, rgba(198, 133, 137, 1) 0%, rgba(153, 179, 224, 1) 52%, rgba(167, 203, 137, 1) 100%);
 }
 
 
@@ -79,5 +80,11 @@
     }
     .selector:last-child {
         justify-content: flex-start;
+    }
+} */
+/* 
+@media screen and (max-width: 1000px) {
+    .selector{
+
     }
 } */
