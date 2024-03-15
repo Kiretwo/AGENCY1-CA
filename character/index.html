@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Character craft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lalezar&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="/CSS/style.css" />
+    <link rel="stylesheet" type="text/css" href="/CSS/character/character-style.css" />
+  </head>
+  <body>
+    <header>
+        <div>
+          <div id="logo-container">
+            <a href="/"><div class="logo-text logo-text-tool">Tool</div></a>
+            <a href="/"><div class="logo-text logo-text-box">Box</div></a>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/memory/">Memory game</a></li>
+            <li><a href="/quiz/">Quiz</a></li>
+            <li><a href="/character/">Character Creator</a></li>
+          </ul>
+        </nav>
+      </header>
+    <main>
+        <div class="char-box">
+            <p>Character craft</p>
+            <input type="checkbox"> Male
+            <input type="checkbox"> Female
+            <div>
+                <div>
+                    <p>Name</p>
+                    <p>Write your name: <input type="text"></p>
+                </div>
+                <p>Race</p>
+                <input type="checkbox"> Human
+                <input type="checkbox"> Elf
+                <input type="checkbox"> Gnome
+                <input type="checkbox"> Hafling
+                <input type="checkbox"> Tiefling
+                <input type="checkbox"> Dragonborn
+                <input type="checkbox"> Orc
+            </div>
+            <div>
+                <p>Stats</p>
+                <input type="range" list="tickmarks" min="1" max="10" value="5" class="slider" id="myRange">
+                <datalist id="tickmarks">
+                    <option value="1"></option>
+                    <option value="2"></option>
+                    <option value="3"></option>
+                    <option value="4"></option>
+                    <option value="5"></option>
+                    <option value="6"></option>
+                    <option value="7"></option>
+                    <option value="8"></option>
+                    <option value="9"></option>
+                    <option value="10"></option>
+                </datalist>
+                <p>Value: <span id="sliderValue"></span></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <nav class="footer-nav">
+          <ul class="lalezar-regular">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/memory/">Memory game</a></li>
+            <li><a href="/quiz/">Quiz</a></li>
+            <li><a href="/character/">Character creator</a></li>
+          </ul>
+        </nav>
+      </footer>
+  </body>
+</html>
