@@ -1,27 +1,34 @@
-// Get all checkboxes
-const checkboxes = document.querySelectorAll('.race-checkbox');
 
-// Add event listener to each checkbox
-checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        // Uncheck all checkboxes except the one that triggered the event
-        checkboxes.forEach(cb => {
-            if (cb !== this) {
-                cb.checked = false;
-            }
-        });
+document.querySelectorAll(".back-class").forEach((box) => {
+  box.addEventListener("click", () => {
+    document.querySelectorAll(".back-class").forEach((b) => {
+      if (b !== box) {
+        b.classList.remove("highlight");
+      }
     });
+    box.classList.toggle("highlight");
+  });
 });
-// Handle gender checkboxes
-const genderCheckboxes = document.querySelectorAll('.gender-checkbox');
-genderCheckboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        if (this.checked) {
-            genderCheckboxes.forEach(cb => {
-                if (cb !== this) {
-                    cb.checked = false;
-                }
-            });
+
+document.querySelectorAll(".gender").forEach((box) => {
+  box.addEventListener("click", () => {
+    document.querySelectorAll(".gender").forEach((b) => {
+      if (b !== box) {
+        b.classList.remove("highlight");
+      }
+    });
+    box.classList.toggle("highlight");
+  });
+});
+
+document.querySelectorAll(".race-checkbox").forEach((box) => {
+    box.addEventListener("click", () => {
+      document.querySelectorAll(".race-checkbox").forEach((b) => {
+        if (b !== box) {
+          b.classList.remove("highlight");
         }
+      });
+      box.classList.toggle("highlight");
     });
-});
+  });
+  

@@ -1,0 +1,111 @@
+.main-text-char{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+
+.name-box{
+    display: flex;
+    justify-content: center;
+}
+.gender-box{
+    display: flex;
+    justify-content: center;
+}
+
+.gender{
+    width: 203px;
+    height: 100px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    margin: 1rem;
+    font-size: 1.4rem;
+}
+
+.gender:first-child{
+    background-color: rgb(174, 229, 255);
+}
+
+.gender:last-child{
+    background-color: rgb(253, 207, 215);
+}
+
+.gender-text{
+    justify-content: center;
+    display: flex;
+    font-size: 1.3rem;
+    padding: 1rem;
+}
+
+.race-box{
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.race-checkbox {
+    width: 180px;
+    height: 40px;
+    margin: 1rem;
+    background-color: rgb(251, 235, 146);
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.back-class{
+    background-color: grey;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.race-text{
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin: 1rem;
+}
+
+.char-text{
+    font-size: 1.5rem;
+}
+
+.more {
+    display: none;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.read-more-toggle {
+    cursor: pointer;
+    color: blue;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.toggle-checkbox:checked ~ .more {
+    display: block;
+}
+
+.toggle-checkbox:checked + .read-more-toggle::after {
+    content: '';
+}
+
+.back-class:hover, .gender:hover, .race-checkbox:hover{
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.highlight {
+    border: 2px solid red;
+  }

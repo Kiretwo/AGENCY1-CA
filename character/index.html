@@ -17,73 +17,244 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="/CSS/style.css" />
-    <link rel="stylesheet" type="text/css" href="/CSS/character/character-style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/CSS/character/character-style.css"
+    />
   </head>
   <body>
     <header>
-        <div>
-          <div id="logo-container">
-            <a href="/"><div class="logo-text logo-text-tool">Tool</div></a>
-            <a href="/"><div class="logo-text logo-text-box">Box</div></a>
+      <div>
+        <div id="logo-container">
+          <a href="/"><div class="logo-text logo-text-tool">Tool</div></a>
+          <a href="/"><div class="logo-text logo-text-box">Box</div></a>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/memory/">Memory game</a></li>
+          <li><a href="/quiz/">Quiz</a></li>
+          <li><a href="/character/">Character Creator</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="char-box">
+        <p class="main-text-char">Character craft</p>
+        <div class="name-box">
+          <p>Name: <input type="text" /></p>
+        </div>
+        <p class="gender-text">Choose Your Gender</p>
+        <div class="gender-box">
+         <div class="gender">Male</div>
+         <div class="gender">Female</div>
+        </div>
+        <p class="race-text">Choose Your Race</p>
+        <div class="race-box">
+          <div class="race-checkbox">
+            <p>Human</p>
+          </div>
+          <div class="race-checkbox">
+            <p>Elf</p>
+          </div>
+          <div class="race-checkbox">
+            <p>Gnome</p>
+          </div>
+          <div class="race-checkbox">
+            <p>Hafling</p>
+          </div>
+          <div class="race-checkbox">
+            <p>Tiefling</p>
+          </div>
+          <div class="race-checkbox">
+            <p>Dragonborn</p>
+          </div>
+          <div class="race-checkbox">
+            <p>Orc</p>
           </div>
         </div>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/memory/">Memory game</a></li>
-            <li><a href="/quiz/">Quiz</a></li>
-            <li><a href="/character/">Character Creator</a></li>
-          </ul>
-        </nav>
-      </header>
-    <main>
-        <div class="char-box">
-            <p>Character craft</p>
-            <input type="checkbox" class="gender-checkbox" data-gender="Male"> Male
-            <input type="checkbox" class="gender-checkbox" data-gender="Female"> Female
-            <div>
-                <div>
-                    <p>Name</p>
-                    <p>Write your name: <input type="text"></p>
-                </div>
-                <p>Race</p>
-                <input type="checkbox" class="race-checkbox" data-race="Human"> Human
-                <input type="checkbox" class="race-checkbox" data-race="Elf"> Elf
-                <input type="checkbox" class="race-checkbox" data-race="Gnome"> Gnome
-                <input type="checkbox" class="race-checkbox" data-race="Halfling"> Halfling
-                <input type="checkbox" class="race-checkbox" data-race="Tiefling"> Tiefling
-                <input type="checkbox" class="race-checkbox" data-race="Dragonborn"> Dragonborn
-                <input type="checkbox" class="race-checkbox" data-race="Orc"> Orc
-            </div>
-            <div>
-                <p>Stats</p>
-                <input type="range" list="tickmarks" min="1" max="10" value="5" class="slider" id="myRange">
-                <datalist id="tickmarks">
-                    <option value="1"></option>
-                    <option value="2"></option>
-                    <option value="3"></option>
-                    <option value="4"></option>
-                    <option value="5"></option>
-                    <option value="6"></option>
-                    <option value="7"></option>
-                    <option value="8"></option>
-                    <option value="9"></option>
-                    <option value="10"></option>
-                </datalist>
-                <p>Value: <span id="sliderValue"></span></p>
-            </div>
+        <div>
+          <p>Stats</p>
+          <input
+            type="range"
+            list="tickmarks"
+            min="3"
+            max="18"
+            value="5"
+            class="slider"
+            id="myRange"
+          />
+          <datalist id="tickmarks">
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+            <option value="6"></option>
+            <option value="7"></option>
+            <option value="8"></option>
+            <option value="9"></option>
+            <option value="10"></option>
+            <option value="11"></option>
+            <option value="12"></option>
+            <option value="13"></option>
+            <option value="14"></option>
+            <option value="15"></option>
+            <option value="16"></option>
+            <option value="17"></option>
+            <option value="18"></option>
+          </datalist>
+          <p>Value: <span id="sliderValue"></span></p>
         </div>
+        <div class="background">
+          <p>Background</p>
+          <div class="back-class">
+            <p class="char-text">Street Urchin:</p>
+            <p>
+              Raised in the alleys of a bustling city, you learned to survive
+              through wit and agility. Dodging the law and rival gangs, you
+              scraped by through petty theft and clever cons. But now, with a
+              taste for adventure, you seek to rise above your humble beginnings
+              and make a name for yourself in the wider world.
+            </p>
+          </div>
+          <div class="back-class">
+            <p class="char-text">Noble Heir:</p>
+            <p>
+              Born into a life of luxury and privilege, you've always had wealth
+              and status at your fingertips. Yet, the confines of noble society
+              chafe against your adventurous spirit. Disillusioned with the
+              trappings of your upbringing, you set out to forge your own
+              destiny, seeking glory and honor beyond the gilded halls of your
+              ancestral home.
+            </p>
+          </div>
+          <div class="back-class">
+            <p class="char-text">Mercenary Veteran:</p>
+            <p>
+              As a seasoned soldier-for-hire, you've seen your fair share of
+              battles and bloodshed. Whether fighting for coin or cause, you've
+              honed your skills on the frontlines of countless conflicts. But
+              now, with war behind you, you seek a new purpose and a chance to
+              atone for the sins of your past.
+            </p>
+          </div>
+          <div class="back-class">
+            <p class="char-text">Sage Scholar:</p>
+            <p>
+              Devoted to the pursuit of knowledge, you've spent years poring
+              over ancient tomes and unraveling the mysteries of the arcane.
+              Your thirst for understanding has led you to distant lands and
+              forgotten ruins in search of lost wisdom and forbidden secrets.
+              But beware, for some truths are better left buried.
+            </p>
+          </div>
+          <div class="back-class">
+            <p class="char-text">Outlander Nomad:</p>
+            <p>
+              Raised in the wilderness by a nomadic tribe, you've lived a life
+              of freedom and self-reliance. Guided by the rhythms of nature,
+              you've learned to hunt, gather, and survive in even the harshest
+              environments. But now, drawn by curiosity or a sense of duty, you
+              venture beyond the familiar lands of your people, eager to explore
+              the wider world and discover what lies beyond the horizon.
+            </p>
+          </div>
+          <div class="back-class">
+            <p class="char-text">Guild Artisan:</p>
+            <p>
+              A master of your craft, you've spent years perfecting your skills
+              as a blacksmith, jeweler, or artisan of some other trade. Whether
+              forging weapons of war or crafting works of beauty, your hands are
+              capable of shaping the world around you. But beneath your skillful
+              exterior lies a burning ambition, driving you to seek new
+              challenges and greater renown in the competitive world of commerce
+              and craftsmanship.
+            </p>
+          </div>
+          <div class="back-class">
+            <p class="char-text">Hermit Mystic:</p>
+            <p>
+              Retreating from the chaos of civilization, you sought solitude in
+              the remote reaches of the world. In the quiet of the wilderness or
+              the seclusion of a hidden sanctuary, you delved deep into
+              meditation and study, unlocking the secrets of the cosmos and the
+              inner workings of the soul. Now, guided by visions and prophecies,
+              you emerge from your solitude to fulfill a greater destiny.
+            </p>
+          </div>
+          <div class="back-class">
+            <p class="char-text">Folk Hero:</p>
+            <p>
+              Born among the common folk, you rose to prominence through acts of
+              courage and selflessness. Whether defending your village from
+              marauding monsters or standing up to tyrannical rulers, you became
+              a beacon of hope and inspiration to those around you. But with
+              fame comes scrutiny, and now you must navigate the complexities of
+              heroism while staying true to your principles.
+            </p>
+          </div>
+          <div class="back-class">
+            <p class="char-text">Pirate Scoundrel:</p>
+            <p>
+              Life on the high seas is a perilous adventure, and you've embraced
+              it with gusto. As a swashbuckling pirate, you've sailed the stormy
+              waters, plundering treasure and evading the law with equal skill.
+              But beneath your roguish exterior lies a code of honor, however
+              skewed, and a thirst for freedom that drives you ever onward in
+              search of the next daring escapade.
+            </p>
+          </div>
+          <div class="back-class">
+            <p class="char-text">Haunted Outcast:</p>
+            <p>
+              Cursed by tragedy or marked by fate, you've always felt like an
+              outsider in the world. Whether haunted by vengeful spirits, cursed
+              with supernatural abilities, or simply burdened by a dark past,
+              you've learned to navigate the shadows with a wary eye and a quick
+              blade. But as the whispers of your past grow louder, you find
+              yourself drawn into a web of intrigue and danger that threatens to
+              consume you.
+            </p>
+          </div>
+          <div class="back-class">
+            <p class="char-text">Arcane Acolyte:</p>
+            <p>
+              Raised in the hallowed halls of a mystical order or tutored by a
+              reclusive mage, you've dedicated your life to the study of magic
+              and the unraveling of its mysteries. From ancient tomes to arcane
+              rituals, you've delved deep into the esoteric arts, mastering
+              spells and incantations that defy comprehension. But with great
+              power comes great responsibility, and now you must wield your
+              magic wisely in a world where every spell has its consequences.
+            </p>
+          </div>
+          <div class="back-class">
+            <p class="char-text">Criminal Mastermind:</p>
+            <p>
+              In the underworld of crime and corruption, you've carved out a
+              niche for yourself as a cunning schemer and ruthless opportunist.
+              Whether running a clandestine smuggling operation or pulling off
+              elaborate heists, you've amassed wealth and influence through
+              sheer force of will and a knack for staying one step ahead of your
+              rivals. But as the stakes grow higher and enemies close in, you
+              must use all your wits and resources to maintain your grip on
+              power.
+            </p>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
-        <nav class="footer-nav">
-          <ul class="lalezar-regular">
-            <li><a href="/" class="active">Home</a></li>
-            <li><a href="/memory/">Memory game</a></li>
-            <li><a href="/quiz/">Quiz</a></li>
-            <li><a href="/character/">Character creator</a></li>
-          </ul>
-        </nav>
-      </footer>
-      <script src="/JS/character/utils.js"></script>
+      <nav class="footer-nav">
+        <ul class="lalezar-regular">
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/memory/">Memory game</a></li>
+          <li><a href="/quiz/">Quiz</a></li>
+          <li><a href="/character/">Character creator</a></li>
+        </ul>
+      </nav>
+    </footer>
+    <script src="/JS/character/utils.js"></script>
   </body>
 </html>
