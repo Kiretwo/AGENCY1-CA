@@ -48,8 +48,8 @@
         </div>
         <p class="gender-text">Choose Your Gender</p>
         <div class="gender-box">
-         <div class="gender">Male</div>
-         <div class="gender">Female</div>
+          <div class="gender">Male</div>
+          <div class="gender">Female</div>
         </div>
         <p class="race-text">Choose Your Race</p>
         <div class="race-box">
@@ -75,36 +75,45 @@
             <p>Orc</p>
           </div>
         </div>
-        <div>
+        <div class="stats-container">
           <p>Stats</p>
-          <input
-            type="range"
-            list="tickmarks"
-            min="3"
-            max="18"
-            value="5"
-            class="slider"
-            id="myRange"
-          />
-          <datalist id="tickmarks">
-            <option value="3"></option>
-            <option value="4"></option>
-            <option value="5"></option>
-            <option value="6"></option>
-            <option value="7"></option>
-            <option value="8"></option>
-            <option value="9"></option>
-            <option value="10"></option>
-            <option value="11"></option>
-            <option value="12"></option>
-            <option value="13"></option>
-            <option value="14"></option>
-            <option value="15"></option>
-            <option value="16"></option>
-            <option value="17"></option>
-            <option value="18"></option>
-          </datalist>
-          <p>Value: <span id="sliderValue"></span></p>
+          <div class="stats-box">
+            <p>Strength:</p>
+            <label id="countLabel0" class="countLabel">1</label>
+            <button class="char-button decreaseBtn" id="decreaseStr">-</button>
+            <button class="char-button increaseBtn" id="increaseStr">+</button>
+          </div>
+          <div class="stats-box">
+            <p>Dexterity:</p>
+            <label id="countLabel1" class="countLabel">1</label>
+            <button class="char-button decreaseBtn" id="decreaseDex">-</button>
+            <button class="char-button increaseBtn" id="increaseDex">+</button>
+          </div>
+          <div class="stats-box">
+            <p>Constitution:</p>
+            <label id="countLabel2" class="countLabel">1</label>
+            <button class="char-button decreaseBtn" id="decreaseCon">-</button>
+            <button class="char-button increaseBtn" id="increaseCon">+</button>
+          </div>
+          <div class="stats-box">
+            <p>Intelligence:</p>
+            <label id="countLabel3" class="countLabel">1</label>
+            <button class="char-button decreaseBtn" id="decreaseInt">-</button>
+            <button class="char-button increaseBtn" id="increaseInt">+</button>
+          </div>
+          <div class="stats-box">
+            <p>Wisdom:</p>
+            <label id="countLabel4" class="countLabel">1</label>
+            <button class="char-button decreaseBtn" id="decreaseWis">-</button>
+            <button class="char-button increaseBtn" id="increaseWis">+</button>
+          </div>
+          <div class="stats-box">
+            <p>Charisma:</p>
+            <label id="countLabel5" class="countLabel">1</label>
+            <button class="char-button decreaseBtn" id="decreaseCha">-</button>
+            <button class="char-button increaseBtn" id="increaseCha">+</button>
+          </div>
+          <button class="char-button resetBtn">Reset</button>
         </div>
         <p class="back-text">Choose Your Background</p>
         <div class="background">
