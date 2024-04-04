@@ -25,6 +25,9 @@ function displayQuestion() {
     const questionContainer = document.querySelector('.question-and-answer');
     const questionData = quizData[currentQuestionIndex];
 
+    const progress = document.querySelector('.progress'); 
+    progress.innerHTML = "Question " + (currentQuestionIndex + 1) + " out of " + quizData.length; // viser progress underveis baseert på lengden av arrayet
+
     // tømmer container før nytt innhold legges til
     questionContainer.innerHTML = `<div class="question">${questionData.question}</div>`;
 
@@ -34,9 +37,8 @@ function displayQuestion() {
    
     for (let i = 0; i < answers.length; i++) { // kjører en loop som lopper gjennom svaralternativene
     const answer = answers[i]; // Lagrer det nåværende svaret i løkken i "answer"
-
     const button = document.createElement('button'); // adder en knapp
-    button.textContent = answer; // endrer teksten på knappen til svaralternativet
+    button.innerHTML = answer; // endrer teksten på knappen til svaralternativet
     button.classList.add('answer'); // adder klasse for styiling i css
 
     // adder en click evenlistener til knappen.
@@ -46,7 +48,7 @@ function displayQuestion() {
     });
 
     questionContainer.appendChild(button); // Legger knappen til questionContainer
-}
+    }
 
     // neste spørsmål knapp
     const nextButton = document.createElement('button');
@@ -90,4 +92,5 @@ function nextQuestion() { // neste spørsmål fubksjon
 }
 
 fetchQuiz();
+
 
