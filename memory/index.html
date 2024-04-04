@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="/CSS/style.css"/>
     <link rel="stylesheet" href="/CSS/memory/memory-style.css"/>
     <script src="/JS/memory/utils.js" defer></script>
-    <script src="/JS/memory/main.js" defer></script>
+    <script src="/JS/memory/script.js" defer></script>
   </head>
 
   <body>
@@ -46,7 +46,21 @@
     </header>
 
     <main>
-      <div class="tiles"></div>
+      <div class="controls-container">
+        <p id="result"></p>
+        <button id="start">Start Game</button>
+      </div>
+
+      <div class="wrapper">
+        <div class="wrapper-content">
+          <div class="stats-container">
+            <div id="moves-counter"></div>
+            <div id="time"></div>
+          </div>
+          <div class="game-container"></div>
+          <button id="stop" class="hide">Stop Game</button>
+        </div>
+      </div>
     </main>
 
     <footer>
