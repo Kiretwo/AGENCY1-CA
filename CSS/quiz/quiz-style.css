@@ -1,4 +1,15 @@
 
+h1 {
+    margin-top: 2rem;
+    font-size: 1.7rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 1rem 0 0 0;
+}
+
 .front-intro-container {
     display: flex;
     justify-content: center;
@@ -86,6 +97,21 @@ section {
     text-align: center;
 }
 
+.question {
+    font-family: "Lalezar", system-ui;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+.progress {
+    font-family: "Lalezar", system-ui;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: #e14949;
+}
+
 .answer {
     color: black;
     text-decoration: none;
@@ -96,6 +122,7 @@ section {
     border-radius: .7rem;
     text-align: center;
     width: 200px;
+    background-color: #d7e6f0;
 }
 
 .correct {
@@ -106,18 +133,17 @@ section {
     background-color: red;
 }
 
+#next-question {
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: #58aa88;
+    display: block;
+    margin: 0 auto 2rem auto;
 
-
-
-
-/* @media screen and (max-width: 1330px) {
-    .selector a:last-of-type {
-            margin-right: auto;
-        }
-    
     
 }
 
-@media screen and (max-width: 1000px) {
-    
-} */
+
+
+
