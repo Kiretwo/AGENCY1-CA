@@ -1,5 +1,8 @@
 let currentQuestionIndex = 0;
-let quizData = []; // conatiner for data fra api
+let quizData = []; // conatiner for data fra ap
+let quizStartTime; //variabel fro start tid
+let timerInterval; //variabel for å lagre timer intervaler
+
 
 async function fetchQuiz() {
     try {
@@ -11,6 +14,7 @@ async function fetchQuiz() {
         if (data.response_code === 0 && data.results) {
             quizData = data.results; // Lagrer spørsmål osm er hentet
             displayQuestion(); // Viser det første spørsmålet
+            startTimer(); //starter timer funksjon
         } else {
             console.log('No results found');
             return [];
@@ -60,9 +64,12 @@ function displayQuestion() {
 
 
 
-function checkAnswer(selectedAnswer) {
-    console.log("selected answer:", selectedAnswer); // debug
+
+function checkAnswer(selectedAnswer) {//legger til valgt svar i quizData array for dette spørsmålet
+    quizData[currentQuestionIndex].user_answer = selectedAnswer;  
     const correctAnswer = quizData[currentQuestionIndex].correct_answer;
+
+    console.log("selected answer:", selectedAnswer); // debug
     console.log("correct:", correctAnswer); // debug
 
     const buttons = document.querySelectorAll('.answer');
@@ -72,7 +79,7 @@ function checkAnswer(selectedAnswer) {
 
         if (button.textContent === correctAnswer) {
             button.classList.add('correct'); // viser riktig svar
-        } 
+        }
 
         // viser valgt svar som feil hvis det er feil svar
         if (button.textContent === selectedAnswer && selectedAnswer !== correctAnswer) {
@@ -87,8 +94,39 @@ function nextQuestion() { // neste spørsmål fubksjon
     if (currentQuestionIndex < quizData.length) {
         displayQuestion();
     } else {
-        document.querySelector('.question-and-answer').innerHTML = '<div>result</div>';
+        // document.querySelector('.question-and-answer').innerHTML = '<div>result</div>';
+        endQuiz();
     }
+}
+
+function startTimer() {
+    quizStartTime = Date.now();
+    timerInterval = setInterval(updateTimer, 1000); //oppdaterer timeren hvert sekund
+}
+
+function updateTimer() {
+    const currentTime = Date.now();
+    const elapsedTime = Math.floor((currentTime - quizStartTime) / 1000); //kalkumerer tid brukt i sekunder
+    const timerDisplay = document.querySelector('.timer');
+    if (timerDisplay) {
+        timerDisplay.textContent = `Time: ${elapsedTime} seconds`;
+    }
+}
+
+function endQuiz() {
+    clearInterval(timerInterval);
+    const currentTime = Date.now();
+    const elapsedTime = Math.floor((currentTime - quizStartTime) / 1000);
+
+    // regner antall riktig svar basert på user answer lagret i hvert spørsmål
+    const correctAnswers = quizData.reduce((count, question) => {
+        return count + (question.user_answer === question.correct_answer ? 1 : 0);
+    }, 0);
+
+    const resultContainer = document.querySelector('.question-and-answer');
+    resultContainer.innerHTML = `<div>gratz! you are finsihed</div>
+                                 <div>${correctAnswers} of ${quizData.length} correct answers</div>
+                                 <div>You used: ${elapsedTime} seconds</div>`;
 }
 
 fetchQuiz();
