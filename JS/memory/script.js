@@ -13,18 +13,18 @@ let secondCard = false;
 
 // Items array
 const items = [
-  {name:"chicken", image:"chicken.png"},
-  {name:"cow", image:"cow.png"},
-  {name:"crab", image:"crab.png"},
-  {name:"fox", image:"fox.png"},
-  {name:"hedgehog", image:"hedgehog.png"},
-  {name:"hippo", image:"hippo.png"},
-  {name:"koala", image:"koala.png"},
-  {name:"lemur", image:"lemur.png"},
-  {name:"pig", image:"pig.png"},
-  {name:"tiger", image:"tiger.png"},
-  {name:"whale", image:"whale.png"},
-  {name:"zebra", image:"zebra.png"},
+  {name:"chicken", image:"/media/memory/chicken.png"},
+  {name:"cow", image:"/media/memory/cow.png"},
+  {name:"crab", image:"/media/memory/crab.png"},
+  {name:"fox", image:"/media/memory/fox.png"},
+  {name:"hedgehog", image:"/media/memory/hedgehog.png"},
+  {name:"hippo", image:"/media/memory/hippo.png"},
+  {name:"koala", image:"/media/memory/koala.png"},
+  {name:"lemur", image:"/media/memory/lemur.png"},
+  {name:"pig", image:"/media/memory/pig.png"},
+  {name:"tiger", image:"/media/memory/tiger.png"},
+  {name:"whale", image:"/media/memory/whale.png"},
+  {name:"zebra", image:"/media/memory/zebra.png"},
 ];
 
 // Initial Time
@@ -78,7 +78,20 @@ const matrixGenerator = (cardValues, size = 4) => {
   //simple shuffle
   cardValues.sort(() => Math.random() - 0.5);
   for(let i=0; i < size*size; i++){
-
+    /*
+      Create Cards
+      before => front side (contains question mark)
+      after => back side (container actual image);
+      data-card-values is a custom attribute which
+      stores the names of the cards to match later
+    */
+  gameContainer.innerHTML +=`
+    <div class="card-container" data-card-value="${cardValues[i].name}">
+      <div class="card-before">?</div>
+      <div class="card-after">
+      <img src="${cardValues[i].image}" class="image"/></div>
+    </div>
+    `;
   }
 };
 
