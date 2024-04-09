@@ -11,6 +11,7 @@ async function fetchQuiz() {
             throw new Error('Could not connect to the API');
         }
         const data = await response.json();
+        console.log(data)
         if (data.response_code === 0 && data.results) {
             quizData = data.results; // Lagrer spørsmål osm er hentet
             displayQuestion(); // Viser det første spørsmålet
@@ -113,6 +114,13 @@ function updateTimer() {
     }
 }
 
+function restartQuiz() {
+    currentQuestionIndex = 0; //resetter index
+    quizData = []; // klarer quizData array
+    clearInterval(timerInterval); // stopper tiden
+    fetchQuiz(); // fetcher quiz på nytt
+}
+
 function endQuiz() {
     clearInterval(timerInterval);
     const currentTime = Date.now();
@@ -126,7 +134,11 @@ function endQuiz() {
     const resultContainer = document.querySelector('.question-and-answer');
     resultContainer.innerHTML = `<div>gratz! you are finsihed</div>
                                  <div>${correctAnswers} of ${quizData.length} correct answers</div>
-                                 <div>You used: ${elapsedTime} seconds</div>`;
+                                 <div>You used: ${elapsedTime} seconds</div>
+                                 <button id="restart-button">Restart Quiz</button>`;
+
+    document.getElementById('restart-button').addEventListener('click', restartQuiz);
+                                 
 }
 
 fetchQuiz();
