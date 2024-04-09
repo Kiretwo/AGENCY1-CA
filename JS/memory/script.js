@@ -44,7 +44,7 @@ const timeGenerator = () => {
   }
   // format time before displaying
   let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
-  let minutesValues = minutes < 10 ? `0${minutes}` : minutes;
+  let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
   timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
 };
 
@@ -148,6 +148,32 @@ const matrixGenerator = (cardValues, size = 4) => {
     });
   });
 };
+
+//Start game
+startButton.addEventListener("click", () => {
+  movesCount = 0;
+  time = 0;
+  //controls and buttons visibility
+  controls.classList.add("hide");
+  stopButton.classList.remove("hide");
+  startButton.classList.add("hide");
+  //Start timer
+  interval = setInterval(timeGenerator, 1000);
+  //initial moves
+  moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
+  initializer();
+});
+
+//Stop game
+stopButton.addEventListener(
+  "click",
+  (stopGame = () => {
+    controls.classList.remove("hide");
+    stopButton.classList.add("hide");
+    startButton.classList.remove("hide");
+    clearInterval(interval);
+  })
+);
 
 //Initialize values and func calls
 const initializer = () => {
