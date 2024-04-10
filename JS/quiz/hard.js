@@ -11,7 +11,7 @@ async function fetchQuiz() {
             throw new Error('Could not connect to the API');
         }
         const data = await response.json();
-        console.log(data)
+        // console.log(data) 
         if (data.response_code === 0 && data.results) {
             quizData = data.results; // Lagrer spørsmål osm er hentet
             displayQuestion(); // Viser det første spørsmålet
@@ -64,26 +64,29 @@ function displayQuestion() {
 }
 
 
+function decodeHTML(html) {//på grunn av problemer med parsing måtte jeg lage en decoder som gjør det smame som html gjør.
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}
 
 
 function checkAnswer(selectedAnswer) {//legger til valgt svar i quizData array for dette spørsmålet
     quizData[currentQuestionIndex].user_answer = selectedAnswer;  
     const correctAnswer = quizData[currentQuestionIndex].correct_answer;
-
-    console.log("selected answer:", selectedAnswer); // debug
-    console.log("correct:", correctAnswer); // debug
-
     const buttons = document.querySelectorAll('.answer');
+    
     for (let i = 0; i < buttons.length; i++) {
         const button = buttons[i];
         button.disabled = true; // Deaktiverer alle svarknappene
 
-        if (button.textContent === correctAnswer) {
+        console.log({html: button.innerHTML, api: correctAnswer});
+        if (button.innerHTML === decodeHTML(correctAnswer)) {
             button.classList.add('correct'); // viser riktig svar
         }
 
         // viser valgt svar som feil hvis det er feil svar
-        if (button.textContent === selectedAnswer && selectedAnswer !== correctAnswer) {
+        if (button.textContent === decodeHTML(selectedAnswer) && decodeHTML(selectedAnswer) !== decodeHTML(correctAnswer)) {
             button.classList.add('wrong');
         }
     }
