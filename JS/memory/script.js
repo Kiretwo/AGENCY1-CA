@@ -1,4 +1,4 @@
-const moves = document.getElementById("movesCount");
+const moves = document.getElementById("moves-count");
 const timeValue = document.getElementById("time");
 const startButton = document.getElementById("start");
 const stopButton = document.getElementById("stop");
@@ -101,7 +101,7 @@ const matrixGenerator = (cardValues, size = 4) => {
   cards.forEach((card) => {
     card.addEventListener("click", () => {
       //If selected card is not matched yet then only run (i.e already matched card when clicked would be ignored)
-      if(!card.classList.contains("matched")){
+      if(!card.classList.contains("matched") && !card.classList.contains("flipped")){
         //flip the clicked card
         card.classList.add("flipped");
         //if it is the firstcard (!firstCard since firstCard is initially false)
@@ -152,7 +152,8 @@ const matrixGenerator = (cardValues, size = 4) => {
 //Start game
 startButton.addEventListener("click", () => {
   movesCount = 0;
-  time = 0;
+  seconds = 0;
+  minutes = 0;
   //controls and buttons visibility
   controls.classList.add("hide");
   stopButton.classList.remove("hide");
@@ -160,7 +161,8 @@ startButton.addEventListener("click", () => {
   //Start timer
   interval = setInterval(timeGenerator, 1000);
   //initial moves
-  moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
+  moves.innerHTML = `<span>Moves:</span> ${movesCount}
+  `;
   initializer();
 });
 
@@ -184,4 +186,4 @@ const initializer = () => {
   matrixGenerator(cardValues);
 };
 
-initializer();
+//initializer();
