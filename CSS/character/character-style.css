@@ -1,57 +1,97 @@
 .main-text-char {
   display: flex;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 1rem;
+  font-family: "MedievalSharp", cursive;
+  font-weight: bolder;
 }
 
-.name-box {
-  display: flex;
-  justify-content: center;
-}
 .gender-box {
   display: flex;
   justify-content: center;
 }
 
 .gender {
-  width: 203px;
-  height: 100px;
-  padding: 1rem;
+  width: 290px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid;
   margin: 1rem;
   font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(251, 235, 146);
 }
 
-.gender:first-child {
-  background-color: rgb(174, 229, 255);
+.gender:first-child:hover {
+  cursor: pointer;
+  color: #111;
+  background: rgba(99, 206, 255, 0.507);
+  box-shadow: 0 0 100px rgb(99, 206, 255);
+  transition: 0.2s;
 }
 
-.gender:last-child {
-  background-color: rgb(253, 207, 215);
+.gender:last-child:hover {
+  cursor: pointer;
+  color: #111;
+  background: rgba(255, 176, 190, 0.692);
+  box-shadow: 0 0 100px rgb(255, 176, 191);
+  transition: 0.2s;
 }
 
-.gender-text,
-.back-text {
+.small-text {
   justify-content: center;
   display: flex;
   font-size: 1.3rem;
   padding: 1rem;
 }
 
-.race-box {
-  margin: 2rem;
+.gender-img1 {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 20% 0%;
+}
+.gender-img2 {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 5% 0%;
+}
+
+.race-class-box {
+  margin: 1rem;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.character-container {
+  border-radius: 5rem;
+  margin: 0 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(137, 77, 177, 0.301) 90%
+  );
+}
+
+.stats-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .race-checkbox {
+  font-size: 1rem;
   width: 180px;
   height: 40px;
-  margin: 1rem;
   background-color: rgb(251, 235, 146);
   border: 1px solid;
   display: flex;
@@ -59,11 +99,57 @@
   align-items: center;
 }
 
+.class-checkbox {
+  padding: 1rem;
+  font-size: 1rem;
+  width: 180px;
+  height: 40px;
+  background-color: rgb(253, 173, 119);
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-box {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-race,
+.content-class {
+  object-fit: cover;
+  font-size: 1rem;
+  padding: 1rem;
+  height: auto;
+  width: 300px;
+  display: none;
+  word-wrap: break-word;
+  background-color: aliceblue;
+  line-height: 1.7rem;
+  font-weight: 500;
+}
+
+.race-img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+.background-img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 10%;
+}
+
 .back-class {
   background-color: rgb(219, 255, 184);
   margin: 1rem;
   padding: 1rem;
-  width: 400px;
+  width: 350px;
   border: 1px solid;
 }
 
@@ -73,15 +159,13 @@
   justify-content: center;
 }
 
-.race-text {
-  display: flex;
-  justify-content: center;
-  font-size: 1.3rem;
-  margin: 1rem;
-}
-
 .char-text {
   font-size: 1.5rem;
+}
+
+.info-text {
+  line-height: 1.7rem;
+  font-weight: 500;
 }
 
 .more {
@@ -107,19 +191,160 @@
   content: "";
 }
 
+.char-button,
+.class-checkbox:hover,
 .back-class:hover,
-.gender:hover,
-.race-checkbox:hover {
+.race-checkbox:hover,
+.resetBtn:hover ,.result-btn:hover{
   cursor: pointer;
-  transform: scale(1.01);
+  transform: scale(1.03);
+  transition: 0.2s;
 }
 
 .highlight {
-  border: 2px solid rgb(255, 255, 255);
+  border: 1px solid aliceblue;
   background-color: aliceblue;
 }
 
-.char-button{
-  padding: 0.5rem;
+.char-button {
   border: 1px solid;
+  width: 40px;
+  height: 25px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(251, 235, 146);
+}
+
+.stats-box {
+  display: flex;
+  margin: 1rem;
+  width: 200px;
+  flex-direction: column;
+}
+
+.countLabel {
+  align-self: center;
+}
+
+.reset-box {
+  margin: 0 3rem;
+  padding: 0 1rem 1rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.resetBtn {
+  background-color: rgb(251, 235, 146);
+  width: 200px;
+  height: 40px;
+  border: 1px solid;
+}
+
+.button-box,
+.stats-box p {
+  align-self: center;
+}
+
+.customize-box {
+  background-color: rgb(219, 255, 184);
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  border: solid 1px;
+}
+
+.big-text {
+  text-align: center;
+  margin: 2.5rem;
+  font-size: 2rem;
+}
+
+.custom-container {
+  padding: 1rem;
+}
+
+.man-img {
+  border: 1px solid;
+  margin: 1rem;
+  width: auto;
+  height: 440px;
+}
+
+.color-box {
+  width: 200px;
+  height: 40px;
+  border: 1px solid;
+  margin-top: 0.5rem;
+}
+
+.age input,
+.name-box input {
+  border: 1px solid;
+  width: 200px;
+  height: 30px;
+  padding: 0 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.name-box {
+}
+
+.img-dice {
+  align-self: center;
+  width: auto;
+  height: 500px;
+  opacity: 0.9;
+}
+
+.weight-slider input,
+.height-slider input {
+  width: 300px;
+}
+
+.result-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: auto;
+  margin: auto;
+  align-content: start;
+}
+
+.forest-img{
+  object-fit: cover;
+  border: 1px solid;
+}
+
+.result-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 50px;
+  font-size: 1.5rem;
+  border: 1px solid;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: rgb(251, 235, 146);
+}
+
+.result-box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.result-back{
+  display: flex;
+  flex-direction: column;
+}
+
+.character-info{
+  border: 1px solid;
+  flex-direction: column;
+  display: flex;
+  width: 400px;
+  align-items: start;
+  background-color: rgb(255, 249, 212);
 }

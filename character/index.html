@@ -6,6 +6,11 @@
     <title>Character craft</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Lalezar&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
@@ -43,83 +48,591 @@
     <main>
       <div class="char-box">
         <p class="main-text-char">Character craft</p>
-        <div class="name-box">
-          <p>Name: <input type="text" /></p>
-        </div>
-        <p class="gender-text">Choose Your Gender</p>
+        <p class="big-text">Choose Your Gender</p>
         <div class="gender-box">
-          <div class="gender">Male</div>
-          <div class="gender">Female</div>
-        </div>
-        <p class="race-text">Choose Your Race</p>
-        <div class="race-box">
-          <div class="race-checkbox">
-            <p>Human</p>
+          <div class="gender">
+            Male
+            <img
+              class="gender-img1"
+              src="/media/character/male.png"
+              alt="img male"
+            />
           </div>
-          <div class="race-checkbox">
-            <p>Elf</p>
-          </div>
-          <div class="race-checkbox">
-            <p>Gnome</p>
-          </div>
-          <div class="race-checkbox">
-            <p>Hafling</p>
-          </div>
-          <div class="race-checkbox">
-            <p>Tiefling</p>
-          </div>
-          <div class="race-checkbox">
-            <p>Dragonborn</p>
-          </div>
-          <div class="race-checkbox">
-            <p>Orc</p>
+          <div class="gender">
+            Female
+            <img
+              class="gender-img2"
+              src="/media/character/woman.png"
+              alt="img woman"
+            />
           </div>
         </div>
-        <div class="stats-container">
-          <p>Stats</p>
-          <div class="stats-box">
-            <p>Strength:</p>
-            <label id="countLabel0" class="countLabel">1</label>
-            <button class="char-button decreaseBtn" id="decreaseStr">-</button>
-            <button class="char-button increaseBtn" id="increaseStr">+</button>
+        <p class="small-text">Choose Your Race</p>
+        <div class="race-class-box">
+          <div class="info-box">
+            <button type="button" class="race-checkbox collapsible1">
+              Human
+            </button>
+            <div class="content-race highlight">
+              <img
+                id="myImg"
+                class="race-img"
+                src="/media/character/craiyon_051540_a_medieval_male_fighter_wearing_blue_armor_wrap_with_long_brown_shaggy_hair_with_dark.png"
+                alt="img of an human"
+              />
+              <p>
+                Humans are people in stories and games. They live in towns and
+                cities and have different jobs and dreams. Some humans like to
+                explore and find new things. They can do many different things
+                and help their friends on adventures. Humans are curious and
+                want to learn about the world around them.
+              </p>
+            </div>
           </div>
-          <div class="stats-box">
-            <p>Dexterity:</p>
-            <label id="countLabel1" class="countLabel">1</label>
-            <button class="char-button decreaseBtn" id="decreaseDex">-</button>
-            <button class="char-button increaseBtn" id="increaseDex">+</button>
+          <div class="info-box">
+            <button type="button" class="race-checkbox collapsible1">
+              Elf
+            </button>
+            <div class="content-race">
+              <img
+                class="race-img"
+                src="/media/character/elf.png"
+                alt="img of an Elf"
+              />
+              <p>
+                Elves are graceful and magical creatures in stories and games.
+                They have pointed ears and are often very wise. Elves live in
+                forests and love nature. They are skilled with bows and arrows
+                and have a deep connection to magic. Elves can live for a long
+                time and are known for their beauty and grace.
+              </p>
+            </div>
           </div>
-          <div class="stats-box">
-            <p>Constitution:</p>
-            <label id="countLabel2" class="countLabel">1</label>
-            <button class="char-button decreaseBtn" id="decreaseCon">-</button>
-            <button class="char-button increaseBtn" id="increaseCon">+</button>
+          <div class="info-box">
+            <button type="button" class="race-checkbox collapsible1">
+              Gnome
+            </button>
+            <div class="content-race">
+              <img
+                class="race-img"
+                src="/media/character/gnome.jpeg"
+                alt="img of an gnome"
+              />
+              <p>
+                Gnomes are small, curious beings known for their love of
+                tinkering and inventing. They live in cozy burrows underground
+                and enjoy gardening and crafting. Gnomes are playful and have a
+                mischievous side, often playing tricks on others. Despite their
+                small stature, gnomes are clever and resourceful, using their
+                intelligence to solve problems and create innovative devices.
+              </p>
+            </div>
           </div>
-          <div class="stats-box">
-            <p>Intelligence:</p>
-            <label id="countLabel3" class="countLabel">1</label>
-            <button class="char-button decreaseBtn" id="decreaseInt">-</button>
-            <button class="char-button increaseBtn" id="increaseInt">+</button>
+          <div class="info-box">
+            <button type="button" class="race-checkbox collapsible1">
+              Hafling
+            </button>
+            <div class="content-race">
+              <img
+                class="race-img"
+                src="/media/character/hafling.png"
+                alt="img of an Hafling"
+              />
+              <p>
+                Halflings are a small, friendly folk known for their love of
+                food, comfort, and simple pleasures. They typically live in
+                small villages or cozy homes nestled in peaceful countryside.
+                Halflings are curious and adventurous, often seeking excitement
+                beyond their quiet lives. Despite their small size, halflings
+                are nimble and quick, making them adept at avoiding danger and
+                getting into tight spots. They have a strong sense of community
+                and enjoy gatherings filled with laughter and good food.
+              </p>
+            </div>
           </div>
-          <div class="stats-box">
-            <p>Wisdom:</p>
-            <label id="countLabel4" class="countLabel">1</label>
-            <button class="char-button decreaseBtn" id="decreaseWis">-</button>
-            <button class="char-button increaseBtn" id="increaseWis">+</button>
+          <div class="info-box">
+            <button type="button" class="race-checkbox collapsible1">
+              Tiefling
+            </button>
+            <div class="content-race">
+              <img
+                class="race-img"
+                src="/media/character/Tiefling.png"
+                alt="img of an Tiefling"
+              />
+              <p>
+                Tieflings are beings with infernal heritage, marked by
+                distinctive features like horns, pointed tails, and sometimes
+                red skin. This ancestry stems from a distant ancestor who made a
+                pact with dark forces, leaving a lasting imprint on their
+                bloodline. Tieflings often face prejudice due to their
+                appearance, but they possess a strong will and resilience. They
+                are known for their diverse talents, ranging from arcane magic
+                to martial prowess, making them formidable adventurers with a
+                hint of otherworldly charm.
+              </p>
+            </div>
           </div>
-          <div class="stats-box">
-            <p>Charisma:</p>
-            <label id="countLabel5" class="countLabel">1</label>
-            <button class="char-button decreaseBtn" id="decreaseCha">-</button>
-            <button class="char-button increaseBtn" id="increaseCha">+</button>
+          <div class="info-box">
+            <button type="button" class="race-checkbox collapsible1">
+              Dragonborn
+            </button>
+            <div class="content-race">
+              <img
+                class="race-img"
+                src="/media/character/Dragonborn.png"
+                alt="img of an Dragonborn"
+              />
+              <p>
+                Dragonborn are proud and noble creatures with the blood of
+                dragons flowing through their veins. They have dragon-like
+                features such as scales, sharp teeth, and the ability to breathe
+                fire or another element. Dragonborn are known for their
+                strength, honor, and strong sense of duty. They come from
+                ancient dragon clans and often follow a strict code of honor.
+                Dragonborn make natural warriors and leaders, respected for
+                their bravery and loyalty.
+              </p>
+            </div>
           </div>
-          <button class="char-button resetBtn">Reset</button>
+          <div class="info-box">
+            <button type="button" class="race-checkbox collapsible1">
+              Orc
+            </button>
+            <div class="content-race">
+              <img
+                class="race-img"
+                src="/media/character/Orc.png"
+                alt="img of an Orc"
+              />
+              <p>
+                Orcs are a powerful and robust humanoid race known for their
+                fierce and aggressive nature. They are often portrayed as
+                muscular, with prominent tusks and greenish skin. Orcs excel in
+                combat and are skilled hunters and warriors. Despite their
+                intimidating appearance, Orcs value strength, loyalty, and honor
+                within their communities. They have a strong sense of kinship
+                and often form tight-knit clans led by chieftains. Orcs are
+                known for their resilience and determination in the face of
+                adversity.
+              </p>
+            </div>
+          </div>
         </div>
-        <p class="back-text">Choose Your Background</p>
+        <div class="class-container">
+          <p class="small-text">Choose Your class</p>
+          <div class="race-class-box">
+            <div class="info-box">
+              <button type="button" class="class-checkbox collapsible">
+                Barbarian
+              </button>
+              <div class="content-class">
+                <img
+                  class="race-img"
+                  src="/media/character/barbarian.png"
+                  alt="img barbarian"
+                />
+                <p>
+                  Barbarians are strong and fierce warriors. They come from
+                  tribal backgrounds and are skilled in combat. They prefer
+                  melee weapons and light armor, relying on their endurance and
+                  rage to win battles. Barbarians have a strong connection to
+                  nature and tradition, and they can unleash powerful attacks
+                  when in battle. They are known for their toughness and ability
+                  to withstand challenges.
+                </p>
+              </div>
+            </div>
+            <div class="info-box">
+              <button type="button" class="class-checkbox collapsible">
+                Warlock
+              </button>
+              <div class="content-class">
+                <img
+                  class="race-img"
+                  src="/media/character/warlock.png"
+                  alt="img warlock"
+                />
+                <p>
+                  Warlocks are mysterious spellcasters who gain their magical
+                  powers through pacts with supernatural entities. They have
+                  access to unique and potent spells, often focusing on dark and
+                  forbidden magic. Warlocks can forge pacts with beings such as
+                  fiends, fey, or otherworldly patrons, granting them abilities
+                  beyond typical spellcasters. They are often enigmatic and have
+                  complex motivations due to their relationships with their
+                  patrons.
+                </p>
+              </div>
+            </div>
+            <div class="info-box">
+              <button type="button" class="class-checkbox collapsible">
+                Sorcerer
+              </button>
+              <div class="content-class">
+                <img
+                  class="race-img"
+                  src="/media/character/Sorcerer.png"
+                  alt="img Sorcerer"
+                />
+                <p>
+                  Sorcerers are individuals born with innate magical abilities.
+                  Unlike wizards who study magic, sorcerers possess a natural
+                  talent for spellcasting that flows through their bloodline.
+                  They can manipulate magical energy to cast spells without the
+                  need for formal training, drawing power from their unique
+                  heritage. This magical essence grants them supernatural
+                  abilities and a deep connection to arcane forces.
+                </p>
+              </div>
+            </div>
+            <div class="info-box">
+              <button type="button" class="class-checkbox collapsible">
+                Rogue
+              </button>
+              <div class="content-class">
+                <img
+                  class="race-img"
+                  src="/media/character/rouge.png"
+                  alt="img rouge"
+                />
+                <p>
+                  Rogues are agile and cunning individuals skilled in stealth
+                  and deception. They excel in tasks requiring finesse, such as
+                  picking locks and sneaking past guards. Rogues are resourceful
+                  and adapt quickly to unexpected challenges, using their wit
+                  and skills to their advantage.
+                </p>
+              </div>
+            </div>
+            <div class="info-box">
+              <button type="button" class="class-checkbox collapsible">
+                Ranger
+              </button>
+              <div class="content-class">
+                <img
+                  class="race-img"
+                  src="/media/character/ranger.png"
+                  alt="img Ranger"
+                />
+                <p>
+                  Rangers are expert trackers and survivalists, at home in the
+                  wilderness. They forge deep connections with nature and are
+                  skilled archers. Rangers often serve as protectors of the
+                  wild, using their knowledge to navigate forests and mountains
+                  with ease.
+                </p>
+              </div>
+            </div>
+            <div class="info-box">
+              <button type="button" class="class-checkbox collapsible">
+                Paladin
+              </button>
+              <div class="content-class">
+                <img
+                  class="race-img"
+                  src="/media/character/paladin.png"
+                  alt="img Paladin"
+                />
+                <p>
+                  Paladins are holy warriors, devoted to upholding justice and
+                  righteousness. They are skilled in combat and possess divine
+                  powers granted by their faith. Paladins use their abilities to
+                  smite evil and defend the innocent. They often serve as
+                  champions of their deity or cause, striving to bring light and
+                  order to the world.
+                </p>
+              </div>
+            </div>
+            <div class="info-box">
+              <button type="button" class="class-checkbox collapsible">
+                Monk
+              </button>
+              <div class="content-class">
+                <img
+                  class="race-img"
+                  src="/media/character/Monk.png"
+                  alt="img Monk"
+                />
+                <p>
+                  Monks are disciplined warriors known for their mastery of
+                  unarmed combat and agility. They excel in martial arts,
+                  relying on their speed and precision to outmaneuver opponents.
+                  Monks are guided by strict codes and possess inner spiritual
+                  energy, known as ki, which they channel to perform incredible
+                  feats in battle.
+                </p>
+              </div>
+            </div>
+            <div class="info-box">
+              <button type="button" class="class-checkbox collapsible">
+                Wizard
+              </button>
+              <div class="content-class">
+                <img
+                  class="race-img"
+                  src="/media/character/wizard.png"
+                  alt="img Wizard"
+                />
+                <p>
+                  Wizards are scholars of the arcane, wielding powerful magic
+                  through extensive study and practice. They possess a deep
+                  understanding of spells and can manipulate the forces of
+                  nature and reality. Wizards often carry spellbooks containing
+                  a wide range of magical knowledge, allowing them to cast
+                  spells for various purposes, from unleashing destructive
+                  forces to conjuring protective barriers.
+                </p>
+              </div>
+            </div>
+            <div class="info-box">
+              <button type="button" class="class-checkbox collapsible">
+                Fighter
+              </button>
+              <div class="content-class">
+                <img
+                  class="race-img"
+                  src="/media/character/fighter.png"
+                  alt="img Fighter"
+                />
+                <p>
+                  Fighters are expert combatants skilled in the art of battle.
+                  They excel in physical combat, using various weapons and armor
+                  to protect allies and defeat enemies. Fighters come from
+                  diverse backgrounds like knights, mercenaries, and
+                  adventurers, focusing on honing their martial abilities
+                  through rigorous training. They are versatile warriors,
+                  combining strength, skill, and tactics to face any challenge.
+                </p>
+              </div>
+            </div>
+            <div class="info-box">
+              <button type="button" class="class-checkbox collapsible">
+                Druid
+              </button>
+              <div class="content-class">
+                <img
+                  class="race-img"
+                  src="/media/character/druid.png"
+                  alt="img Druid"
+                />
+                <p>
+                  Druids are nature's guardians, deeply connected to the
+                  wilderness. They possess magical abilities tied to animals,
+                  plants, and elemental forces. Druids can transform into
+                  animals and wield nature's magic for healing and protection.
+                  They live in harmony with nature, protecting the balance of
+                  the natural world.
+                </p>
+              </div>
+            </div>
+            <div class="info-box">
+              <button type="button" class="class-checkbox collapsible">
+                Cleric
+              </button>
+              <div class="content-class">
+                <img
+                  class="race-img"
+                  src="/media/character/cleric.png"
+                  alt="img Cleric"
+                />
+                <p>
+                  Clerics are devoted to divine entities, serving as
+                  intermediaries between gods and mortals. They channel divine
+                  magic to heal allies, banish undead, and smite foes. Clerics
+                  uphold the tenets of their faith, embodying principles of
+                  compassion, justice, or zeal. They can wear armor and wield
+                  weapons, making them versatile combatants and healers.
+                </p>
+              </div>
+            </div>
+            <div class="info-box">
+              <button type="button" class="class-checkbox collapsible">
+                Bard
+              </button>
+              <div class="content-class">
+                <img
+                  class="race-img"
+                  src="/media/character/bard.png"
+                  alt="img Bard"
+                />
+                <p>
+                  Bards are charismatic performers and storytellers, skilled in
+                  magic and music. They weave magic through their art, inspiring
+                  allies and bewildering enemies. Bards can heal wounds with
+                  soothing melodies, cast illusions with stirring performances,
+                  or use their wit to outmaneuver adversaries. They travel the
+                  world seeking inspiration and sharing their tales, leaving a
+                  mark wherever they go.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="big-text">Customize Your character</p>
+        <div class="character-container">
+          <div class="customize-box">
+            <img
+              class="man-img"
+              src="/media/character/manimg.png"
+              alt="black man img"
+            />
+            <div class="custom-container">
+              <div class="height-slider">
+                <p>Height</p>
+                <input type="range" min="100" max="230" value="150" id="myRange" />
+                <span id="rangeValue">150</span> cm
+              </div>
+              <div class="weight-slider">
+                <p>Weight</p>
+                <input type="range" min="100" max="300" value="150" id="myWeight" />
+                <span id="weightValue">150</span> kg
+              </div>
+              <br />
+              <div class="body-type">
+                Lean
+                <input
+                  class="body-lean"
+                  type="radio"
+                  name="bodyType"
+                  value="Lean"
+                />
+              </div>
+              <br />
+              <div class="body-type">
+                Fit
+                <input
+                  class="body-fit"
+                  type="radio"
+                  name="bodyType"
+                  value="Fit"
+                />
+              </div>
+              <br />
+              <div class="body-type">
+                Muscular
+                <input
+                  class="body-muscular"
+                  type="radio"
+                  name="bodyType"
+                  value="Muscular"
+                />
+              </div>
+
+              <br />
+              <div class="skin-color">
+                <p>Skin Color</p>
+                <input id="myColor" class="color-box" type="color" />
+              </div>
+              <div class="age">
+                <p>Age</p>
+                <input
+                  type="number"
+                  name="age"
+                  id="myAge"
+                  placeholder="Enter your age"
+                />
+              </div>
+              <div class="name-box">
+                <p>Name</p>
+                <input id="myName" placeholder="Enter your name" type="text" />
+              </div>
+            </div>
+          </div>
+          <div class="stats-container">
+            <p class="small-text">Character Stats</p>
+            <div class="stats-box">
+              <label id="myStr" class="countLabel">8</label>
+              <p>Strength</p>
+              <div class="button-box">
+                <button class="char-button increaseBtn" id="increaseStr">
+                  +
+                </button>
+                <button class="char-button decreaseBtn" id="decreaseStr">
+                  -
+                </button>
+              </div>
+            </div>
+            <div class="stats-box">
+              <label id="myDex" class="countLabel">8</label>
+              <p>Dexterity</p>
+              <div class="button-box">
+                <button class="char-button increaseBtn" id="increaseDex">
+                  +
+                </button>
+                <button class="char-button decreaseBtn" id="decreaseDex">
+                  -
+                </button>
+              </div>
+            </div>
+            <div class="stats-box">
+              <label id="myCon" class="countLabel">8</label>
+              <p>Constitution</p>
+              <div class="button-box">
+                <button class="char-button increaseBtn" id="increaseCon">
+                  +
+                </button>
+                <button class="char-button decreaseBtn" id="decreaseCon">
+                  -
+                </button>
+              </div>
+            </div>
+            <div class="stats-box">
+              <label id="myInt" class="countLabel">8</label>
+              <p>Intelligence</p>
+              <div class="button-box">
+                <button class="char-button increaseBtn" id="increaseInt">
+                  +
+                </button>
+                <button class="char-button decreaseBtn" id="decreaseInt">
+                  -
+                </button>
+              </div>
+            </div>
+            <div class="stats-box">
+              <label id="myWis" class="countLabel">8</label>
+              <p>Wisdom</p>
+              <div class="button-box">
+                <button class="char-button increaseBtn" id="increaseWis">
+                  +
+                </button>
+                <button class="char-button decreaseBtn" id="decreaseWis">
+                  -
+                </button>
+              </div>
+            </div>
+            <div class="stats-box">
+              <label id="myCha" class="countLabel">8</label>
+              <p>Charisma</p>
+              <div class="button-box">
+                <button class="char-button increaseBtn" id="increaseCha">
+                  +
+                </button>
+                <button class="char-button decreaseBtn" id="decreaseCha">
+                  -
+                </button>
+              </div>
+            </div>
+            <div class="reset-box">
+              <button class="resetBtn">Reset</button>
+            </div>
+          </div>
+          <img
+            class="img-dice"
+            src="/media/character/purpledice.png"
+            alt="im dice"
+          />
+        </div>
+        <p class="big-text">Choose Your Background</p>
         <div class="background">
           <div class="back-class">
+            <img
+              class="background-img"
+              src="/media/character/Street Urchin.jpeg"
+              alt="background img street urchin"
+            />
             <p class="char-text">Street Urchin:</p>
-            <p>
+            <p class="info-text">
               Raised in the alleys of a bustling city, you learned to survive
               through wit and agility. Dodging the law and rival gangs, you
               scraped by through petty theft and clever cons. But now, with a
@@ -128,8 +641,13 @@
             </p>
           </div>
           <div class="back-class">
+            <img
+              class="background-img"
+              src="/media/character/nobleheir.png"
+              alt="background img noble Heir"
+            />
             <p class="char-text">Noble Heir:</p>
-            <p>
+            <p class="info-text">
               Born into a life of luxury and privilege, you've always had wealth
               and status at your fingertips. Yet, the confines of noble society
               chafe against your adventurous spirit. Disillusioned with the
@@ -139,8 +657,13 @@
             </p>
           </div>
           <div class="back-class">
+            <img
+              class="background-img"
+              src="/media/character/mercenaryveteran.png"
+              alt="background img Mercenary Veteran"
+            />
             <p class="char-text">Mercenary Veteran:</p>
-            <p>
+            <p class="info-text">
               As a seasoned soldier-for-hire, you've seen your fair share of
               battles and bloodshed. Whether fighting for coin or cause, you've
               honed your skills on the frontlines of countless conflicts. But
@@ -149,8 +672,13 @@
             </p>
           </div>
           <div class="back-class">
+            <img
+              class="background-img"
+              src="/media/character/sagescholars.png"
+              alt="background img Sage Scholar"
+            />
             <p class="char-text">Sage Scholar:</p>
-            <p>
+            <p class="info-text">
               Devoted to the pursuit of knowledge, you've spent years poring
               over ancient tomes and unraveling the mysteries of the arcane.
               Your thirst for understanding has led you to distant lands and
@@ -159,8 +687,13 @@
             </p>
           </div>
           <div class="back-class">
+            <img
+              class="background-img"
+              src="/media/character/Outlandernomad.png"
+              alt="background img Outlander Nomad"
+            />
             <p class="char-text">Outlander Nomad:</p>
-            <p>
+            <p class="info-text">
               Raised in the wilderness by a nomadic tribe, you've lived a life
               of freedom and self-reliance. Guided by the rhythms of nature,
               you've learned to hunt, gather, and survive in even the harshest
@@ -170,8 +703,13 @@
             </p>
           </div>
           <div class="back-class">
+            <img
+              class="background-img"
+              src="/media/character/Guildartisan.png"
+              alt="background img Guild Artisan"
+            />
             <p class="char-text">Guild Artisan:</p>
-            <p>
+            <p class="info-text">
               A master of your craft, you've spent years perfecting your skills
               as a blacksmith, jeweler, or artisan of some other trade. Whether
               forging weapons of war or crafting works of beauty, your hands are
@@ -182,8 +720,13 @@
             </p>
           </div>
           <div class="back-class">
+            <img
+              class="background-img"
+              src="/media/character/Hermitmystic.png"
+              alt="background img Hermit Mystic"
+            />
             <p class="char-text">Hermit Mystic:</p>
-            <p>
+            <p class="info-text">
               Retreating from the chaos of civilization, you sought solitude in
               the remote reaches of the world. In the quiet of the wilderness or
               the seclusion of a hidden sanctuary, you delved deep into
@@ -193,8 +736,13 @@
             </p>
           </div>
           <div class="back-class">
+            <img
+              class="background-img"
+              src="/media/character/Folkhero.png"
+              alt="background img Folk Hero"
+            />
             <p class="char-text">Folk Hero:</p>
-            <p>
+            <p class="info-text">
               Born among the common folk, you rose to prominence through acts of
               courage and selflessness. Whether defending your village from
               marauding monsters or standing up to tyrannical rulers, you became
@@ -204,8 +752,13 @@
             </p>
           </div>
           <div class="back-class">
+            <img
+              class="background-img"
+              src="/media/character/Piratescoundrel.png"
+              alt="background img Pirate Scoundrel"
+            />
             <p class="char-text">Pirate Scoundrel:</p>
-            <p>
+            <p class="info-text">
               Life on the high seas is a perilous adventure, and you've embraced
               it with gusto. As a swashbuckling pirate, you've sailed the stormy
               waters, plundering treasure and evading the law with equal skill.
@@ -215,8 +768,13 @@
             </p>
           </div>
           <div class="back-class">
+            <img
+              class="background-img"
+              src="/media/character/Hauntedoutcast.png"
+              alt="background img Haunted Outcast"
+            />
             <p class="char-text">Haunted Outcast:</p>
-            <p>
+            <p class="info-text">
               Cursed by tragedy or marked by fate, you've always felt like an
               outsider in the world. Whether haunted by vengeful spirits, cursed
               with supernatural abilities, or simply burdened by a dark past,
@@ -227,8 +785,13 @@
             </p>
           </div>
           <div class="back-class">
+            <img
+              class="background-img"
+              src="/media/character/Arcaneacolyte.png"
+              alt="background img Arcane Acolyte"
+            />
             <p class="char-text">Arcane Acolyte:</p>
-            <p>
+            <p class="info-text">
               Raised in the hallowed halls of a mystical order or tutored by a
               reclusive mage, you've dedicated your life to the study of magic
               and the unraveling of its mysteries. From ancient tomes to arcane
@@ -239,8 +802,13 @@
             </p>
           </div>
           <div class="back-class">
+            <img
+              class="background-img"
+              src="/media/character/Criminalmastermind.png"
+              alt="background img Criminal Mastermind"
+            />
             <p class="char-text">Criminal Mastermind:</p>
-            <p>
+            <p class="info-text">
               In the underworld of crime and corruption, you've carved out a
               niche for yourself as a cunning schemer and ruthless opportunist.
               Whether running a clandestine smuggling operation or pulling off
@@ -253,6 +821,20 @@
           </div>
         </div>
       </div>
+      <br />
+      <div class="result-container" id="showResultBtn">
+        <p class="big-text">Finalize Your Character</p>
+        <button class="result-btn">Finalize</button>
+        <div class="result-box">
+          <img
+            class="forest-img"
+            src="/media/character/landscape.jpeg"
+            alt="img forest"
+          />
+          <div id="characterDisplay"></div>
+        </div>
+      </div>
+      <br />
     </main>
     <footer>
       <nav class="footer-nav">
