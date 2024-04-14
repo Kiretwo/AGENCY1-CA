@@ -48,7 +48,7 @@ function displayQuestion() {
 
     // adder en click evenlistener til knappen.
     button.addEventListener('click', function() {
-        console.log("clicked:", answer); // debug.
+        // console.log("clicked:", answer); // debug.
         checkAnswer(answer); // kjører checkAnswer funksjon med valgt svar som argument.
     });
 
@@ -75,12 +75,12 @@ function checkAnswer(selectedAnswer) {//legger til valgt svar i quizData array f
     quizData[currentQuestionIndex].user_answer = selectedAnswer;  
     const correctAnswer = quizData[currentQuestionIndex].correct_answer;
     const buttons = document.querySelectorAll('.answer');
-    
+
     for (let i = 0; i < buttons.length; i++) {
         const button = buttons[i];
         button.disabled = true; // Deaktiverer alle svarknappene
 
-        console.log({html: button.innerHTML, api: correctAnswer});
+        // console.log({html: button.innerHTML, api: correctAnswer}); //debug
         if (button.innerHTML === decodeHTML(correctAnswer)) {
             button.classList.add('correct'); // viser riktig svar
         }
@@ -98,7 +98,6 @@ function nextQuestion() { // neste spørsmål fubksjon
     if (currentQuestionIndex < quizData.length) {
         displayQuestion();
     } else {
-        // document.querySelector('.question-and-answer').innerHTML = '<div>result</div>';
         endQuiz();
     }
 }
@@ -134,11 +133,25 @@ function endQuiz() {
         return count + (question.user_answer === question.correct_answer ? 1 : 0);
     }, 0);
 
+
+    const quizResultHard = { //lager en const med rsultat for quiz som videre lagres i local storage
+        correctAnswers: correctAnswers, totalQuestions: quizData.length, timeSpent: elapsedTime, date: new Date().toLocaleString() 
+    };
+
+    localStorage.setItem('quizResultHard', JSON.stringify(quizResultHard));
+
+    const previousResult = JSON.parse(localStorage.getItem('quizResultHard'));
+
     const resultContainer = document.querySelector('.question-and-answer');
     resultContainer.innerHTML = `<div>gratz! you are finsihed</div>
                                  <div>${correctAnswers} of ${quizData.length} correct answers</div>
                                  <div>You used: ${elapsedTime} seconds</div>
-                                 <button id="restart-button">Restart Quiz</button>`;
+                                 <button id="restart-button">Restart Quiz</button>
+                                 <div class="previous-results">
+                                    <h3>Previous result on hard</h3>
+                                    <div>Last result: ${previousResult.correctAnswers} of ${previousResult.totalQuestions} correct answers, time used ${previousResult.timeSpent} secounds on ${previousResult.date}
+                                    </div>
+                                </div>`
 
     document.getElementById('restart-button').addEventListener('click', restartQuiz);
                                  
