@@ -45,13 +45,13 @@ const timeGenerator = () => {
   // format time before displaying
   let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
   let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
-  timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
+  timeValue.innerHTML = `<span>Time:</span> ${minutesValue}:${secondsValue}`;
 };
 
 //For calculating moves
 const movesCounter = () => {
   movesCount += 1;
-  moves.innerHTML = `<span>Moves:</span>${movesCount}`;
+  moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
 };
 
 //Pick random objects from the items array
@@ -95,9 +95,52 @@ const matrixGenerator = (cardValues, size = 4) => {
   }
   //Grid
   gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
-
   //Cards
   cards = document.querySelectorAll(".card-container");
+  let isClickable = true; // Flag to control whether cards are clickable
+  const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms)); // Function to create a delay
+  cards.forEach((card) => {
+    card.addEventListener("click", async () => {
+      // Check if the card is clickable and not already matched or flipped
+      if (isClickable && !card.classList.contains("matched") && !card.classList.contains("flipped")) {
+        card.classList.add("flipped"); // Flip the card
+        // If it's the first card flipped
+        if (!firstCard) {
+          firstCard = card;
+          firstCardValue = card.getAttribute("data-card-value");
+        } else {
+          movesCounter(); // Increment moves count
+          secondCard = card;
+          let secondCardValue = card.getAttribute("data-card-value");
+          isClickable = false; // Disable clicking during delay
+          if (firstCardValue === secondCardValue) {
+            // If the cards match
+            firstCard.classList.add("matched");
+            secondCard.classList.add("matched");
+            firstCard = false;
+            winCount += 1;
+            if (winCount === Math.floor(cardValues.length / 2)) {
+              result.innerHTML = `
+                <h2>You Won</h2>
+                <h4>Moves: ${movesCount}</h4>
+              `;
+              stopGame();
+            }
+          } else {
+            let [tempFirst, tempSecond] = [firstCard, secondCard];
+            firstCard = false;
+            await delay(1000); // Add a delay of 1000 milliseconds
+            tempFirst.classList.remove("flipped");
+            tempSecond.classList.remove("flipped");
+          }
+          isClickable = true; // Enable clicking after delay
+        }
+      }
+    });
+  });
+};
+  /* PREVIOUS CODE WITH BUGS FOR REFERENCE */
+  /*
   cards.forEach((card) => {
     card.addEventListener("click", () => {
       //If selected card is not matched yet then only run (i.e already matched card when clicked would be ignored)
@@ -148,6 +191,7 @@ const matrixGenerator = (cardValues, size = 4) => {
     });
   });
 };
+*/
 
 //Start game
 startButton.addEventListener("click", () => {
@@ -185,5 +229,3 @@ const initializer = () => {
   console.log(cardValues);
   matrixGenerator(cardValues);
 };
-
-//initializer();

@@ -2,9 +2,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  /* *font-family alters footer as well, NEEDS FIX */
 }
 body {
-  background-color: #f4c531;
+  background-color: #C0CAD4;
 }
 .wrapper {
   display: flex;
@@ -26,11 +28,15 @@ body {
   gap: 0.6em;
 }
 .stats-container {
-  text-align: right;
+  text-align: center;
   margin-bottom: 1.2em;
+  font-size: 1.1em;
 }
 .stats-container span{
   font-weight: 600;
+}
+#time {
+  margin-top: 10px;
 }
 .image {
   width: 100px;
@@ -79,7 +85,7 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: #f4c531;
+  background-color: #C0CAD4;
   z-index: 100;
 }
 button {
@@ -87,13 +93,18 @@ button {
   border-radius: 0.3em;
   padding: 1em 1.5em;
   cursor: pointer;
+  font-weight: 600;
 }
 #stop {
-  font-size: 1.1em;
+  font-size: 1.3em;
   display: block;
   margin: 1.1em auto 0 auto;
-  background-color: #000000;
-  color: #ffffff;
+  padding: 0.7em 3em;
+  background-color: #FFA899;
+  color: #000000;
+  border: 3px solid #000000;
+  border-radius: 12px;
+  font-weight: 700;
 }
 .controls-container button {
   font-size: 1.3em;
@@ -111,4 +122,29 @@ button {
 #result h4 {
   font-size: 1.8em;
   margin: 0.6em 0 1em 0;
+}
+
+@media screen and (max-width: 700px) {
+  .wrapper-content {
+    width: 20em;
+    gap: 0.2em;
+  }
+  .card-container {
+    width: 4.5em;
+    height: 4.5em;
+  }
+  .image {
+    width: 70px;
+    height: auto;
+  }
+  #stop {
+    font-size: 1em;
+    margin: 1.1em auto 0 auto;
+    padding: 0.7em 2.5em;
+    border: 2px solid #000000;
+  }
+  .card-before, 
+  .card-after {
+    border: 3px solid #000000;
+  }
 }
