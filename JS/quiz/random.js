@@ -133,28 +133,34 @@ function endQuiz() {
         return count + (question.user_answer === question.correct_answer ? 1 : 0);
     }, 0);
 
+    //lager en const med resultat for quiz som videre lagres i local storage
+    const quizResultRandom = { correctAnswers: correctAnswers, totalQuestions: quizData.length, timeSpent: elapsedTime, date: new Date().toLocaleString()};
 
-    const quizResultRandom = { //lager en const med rsultat for quiz som videre lagres i local storage
-        correctAnswers: correctAnswers, totalQuestions: quizData.length, timeSpent: elapsedTime, date: new Date().toLocaleString() 
-    };
-
-    localStorage.setItem('quizResultRandom', JSON.stringify(quizResultRandom));
-
-    const previousResult = JSON.parse(localStorage.getItem('quizResultRandom'));
+  
+    const results = JSON.parse(localStorage.getItem('quizResultsRandom')) || [];   // henter tidligere resultater eller oppretter et nytt array
+    const previousResult = results[results.length - 1] || null; //hvis det er tidligere resultater, lagres det nyeste som previousResult
+    // Legg til det nye resultatet i arrayet
+    results.push(quizResultRandom);
+   
+    localStorage.setItem('quizResultsRandom', JSON.stringify(results));
 
     const resultContainer = document.querySelector('.question-and-answer');
-    resultContainer.innerHTML = `<div>gratz! you are finsihed</div>
+    resultContainer.innerHTML = `<div>gratz! you are finished</div>
                                  <div>${correctAnswers} of ${quizData.length} correct answers</div>
                                  <div>You used: ${elapsedTime} seconds</div>
-                                 <button id="restart-button">Restart Quiz</button>
-                                 <div class="previous-results">
-                                    <h3>Previous result on random</h3>
-                                    <div>Last result: ${previousResult.correctAnswers} of ${previousResult.totalQuestions} correct answers, time used ${previousResult.timeSpent} secounds on ${previousResult.date}
-                                    </div>
-                                </div>`
+                                 <button id='restart-button'>Restart Quiz</button>`;
+
+    
+    if (previousResult) { //sjekker om det finnes et tidligere resultat å vise
+        resultContainer.innerHTML += `<div class="previous-results">
+                                        <h3>Previous result on random</h3>
+                                        <div>Last result: ${previousResult.correctAnswers} of ${previousResult.totalQuestions} correct answers, time used ${previousResult.timeSpent} seconds on ${previousResult.date}</div>
+                                      </div>`;
+    } else {
+        resultContainer.innerHTML += `<div class="previous-results"><h3>No previous results found.</h3></div>`;
+    }
 
     document.getElementById('restart-button').addEventListener('click', restartQuiz);
-                                 
 }
 
 fetchQuiz();

@@ -59,14 +59,16 @@ h2 {
 }
 
 .quiz-card {
-    border: 1px solid black;
-    border-radius: 30px;
-    transition: .4s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    padding: 20px;
+    margin: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
 .quiz-card:hover {
-    transform: scale(1.1);
-    border: 2px solid black;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .easy {
@@ -93,6 +95,15 @@ h2 {
 
 /* ------GAME------ */
 
+
+.timer {
+    font-family: "Lalezar", system-ui;
+    font-weight: 100;
+    font-style: normal;
+
+}
+
+
 section {
     text-align: center;
 }
@@ -118,19 +129,26 @@ section {
     padding: 80px 15px;
     margin: 50px;
     font-size: 1.1rem;
-    border: 1px solid black;
-    border-radius: .7rem;
+    border: none;
     text-align: center;
     width: 200px;
     background-color: #d7e6f0;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
+.answer:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: rgb(201, 219, 231);
+    }
+
+
 .correct {
-    background-color: green;
+    background-color: green !important; /*hover effekt overstyrte fargerespons ved trykk, ved å legge til important får man visell respons ved klikk*/
 }
 
 .wrong {
-    background-color: red;
+    background-color: red !important;
 }
 
 #next-question, #restart-button {
@@ -140,10 +158,15 @@ section {
     background-color: #58aa88;
     display: block;
     margin: 0 auto 2rem auto;
-
-    
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
+#restart-button {
+    margin: .7rem auto 2rem auto;
+}
 
-
+#next-question:hover, #restart-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
 
