@@ -47,10 +47,12 @@ body {
 }
 
 .gender.active-male {
+  background: rgba(99, 206, 255, 0.507);
   box-shadow: 0 0 100px rgb(99, 206, 255);
 }
 
 .gender.active-female {
+  background: rgba(255, 176, 190, 0.692);
   box-shadow: 0 0 100px rgb(255, 176, 191);
 }
 
