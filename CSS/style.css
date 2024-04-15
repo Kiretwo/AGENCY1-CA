@@ -5,6 +5,7 @@
 
 body {
     background-color: #C0CAD4;
+    
 }
 
 /* fonts */
@@ -155,6 +156,7 @@ header nav ul li:hover {
 /* FOOTER */
 footer {
     background-color: #4B4A4A;
+    margin-top: 7rem;
 }
 
 footer nav ul {
