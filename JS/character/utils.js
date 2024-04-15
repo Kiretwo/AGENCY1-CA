@@ -2,6 +2,14 @@
 
 const increaseBtns = document.querySelectorAll(".increaseBtn");
 
+document.querySelector('.gender:first-child').addEventListener('click', function() {
+  this.classList.toggle('active-male');
+});
+
+document.querySelector('.gender:last-child').addEventListener('click', function() {
+  this.classList.toggle('active-female');
+});
+
 // Add click event listener to each increase button
 increaseBtns.forEach((button) => {
   button.addEventListener("click", () => {

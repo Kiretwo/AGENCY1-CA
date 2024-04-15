@@ -46,6 +46,14 @@ body {
   transition: 0.2s;
 }
 
+.gender.active-male {
+  box-shadow: 0 0 100px rgb(99, 206, 255);
+}
+
+.gender.active-female {
+  box-shadow: 0 0 100px rgb(255, 176, 191);
+}
+
 .small-text {
   justify-content: center;
   display: flex;
@@ -289,9 +297,6 @@ body {
   height: 30px;
   padding: 0 0.5rem;
   margin-top: 0.5rem;
-}
-
-.name-box {
 }
 
 .img-dice {
