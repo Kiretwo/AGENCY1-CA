@@ -106,6 +106,7 @@ header nav ul li:hover {
     justify-content: center;
     padding-top: 1rem;
     font-weight: 500;
+    margin-top: 2rem;
 }
 
 .grid-container{
@@ -114,8 +115,7 @@ header nav ul li:hover {
     display: grid;
     grid-template-columns: 300px 300px;
     grid-template-rows: 300px 300px;
-    padding: 2rem;
-    margin: 3rem;
+    padding: 3rem;
 }
 
 .game{
