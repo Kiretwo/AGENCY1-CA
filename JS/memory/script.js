@@ -5,6 +5,7 @@ const stopButton = document.getElementById("stop");
 const gameContainer = document.querySelector(".game-container");
 const result = document.getElementById("result");
 const controls = document.querySelector(".controls-container");
+const greeting = document.getElementById("greeting");
 
 let cards;
 let interval;
@@ -87,7 +88,7 @@ const matrixGenerator = (cardValues, size = 4) => {
     */
   gameContainer.innerHTML +=`
     <div class="card-container" data-card-value="${cardValues[i].name}">
-      <div class="card-before">?</div>
+      <div class="card-before unselectable">?</div>
       <div class="card-after">
       <img src="${cardValues[i].image}" class="image"/></div>
     </div>
@@ -121,10 +122,11 @@ const matrixGenerator = (cardValues, size = 4) => {
             winCount += 1;
             if (winCount === Math.floor(cardValues.length / 2)) {
               result.innerHTML = `
-                <h2>You Won</h2>
+                <h2>You Won!</h2>
                 <h4>Moves: ${movesCount}</h4>
               `;
               stopGame();
+              greeting.classList.add("hide");
             }
           } else {
             let [tempFirst, tempSecond] = [firstCard, secondCard];
@@ -139,7 +141,7 @@ const matrixGenerator = (cardValues, size = 4) => {
     });
   });
 };
-  /* PREVIOUS CODE WITH BUGS FOR REFERENCE */
+  /* PREVIOUS CODE WITH BUG FOR REFERENCE */
   /*
   cards.forEach((card) => {
     card.addEventListener("click", () => {
@@ -217,6 +219,7 @@ stopButton.addEventListener(
     controls.classList.remove("hide");
     stopButton.classList.add("hide");
     startButton.classList.remove("hide");
+    greeting.classList.remove("hide");
     clearInterval(interval);
   })
 );
@@ -226,6 +229,5 @@ const initializer = () => {
   result.innerText = "";
   winCount = 0;
   let cardValues = generateRandom();
-  console.log(cardValues);
   matrixGenerator(cardValues);
 };

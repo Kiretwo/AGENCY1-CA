@@ -154,7 +154,6 @@ header nav ul li:hover {
 
 /* FOOTER */
 footer {
-    max-height: 20rem;
     background-color: #4B4A4A;
 }
 
@@ -176,6 +175,7 @@ footer nav ul li a {
     text-decoration: none;
     font-size: 1.5rem;
     padding: 0 1rem;
+    font-weight: 500;
 }
 
 footer nav ul li a:visited {
@@ -188,9 +188,7 @@ footer nav ul li a:hover {
 }
 
 .active {
-    border-bottom: 3px solid black;
-    font-size: 1.7rem;
-    font-weight: 600;
+    text-decoration: underline;
 }
 
 
