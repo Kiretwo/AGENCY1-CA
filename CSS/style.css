@@ -5,7 +5,9 @@
 
 body {
     background-color: #C0CAD4;
-    
+    position: relative;
+    padding-bottom: 250px;
+    min-height: 100vh;
 }
 
 /* fonts */
@@ -157,6 +159,9 @@ header nav ul li:hover {
 footer {
     background-color: #4B4A4A;
     margin-top: 12rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 footer nav ul {
