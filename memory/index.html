@@ -13,8 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/CSS/style.css" />
-    <script src="/JS/memory/utils.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="/CSS/style.css"/>
+    <link rel="stylesheet" href="/CSS/memory/memory-style.css"/>
+    <script src="/JS/memory/script.js" defer></script>
   </head>
 
   <body>
@@ -29,13 +30,13 @@
         <ul class="sidebar">
           <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
           <li><a href="/">Home</a></li>
-          <li><a href="/memory/">Memory Game</a></li>
+          <li><a href="/memory/" class="active">Memory Game</a></li>
           <li><a href="/quiz/">Quiz Game</a></li>
           <li><a href="/character/">Character Creator</a></li>
         </ul>
         <ul>
           <li class="hideOnMobile"><a href="/">Home</a></li>
-          <li class="hideOnMobile"><a href="/memory/">Memory Game</a></li>
+          <li class="hideOnMobile"><a href="/memory/" class="active">Memory Game</a></li>
           <li class="hideOnMobile"><a href="/quiz/">Quiz Game</a></li>
           <li class="hideOnMobile"><a href="/character/">Character Creator</a></li>
           <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
@@ -44,16 +45,34 @@
     </header>
 
     <main>
-      <div id="cardDrawn"></div>
+      <div class="controls-container">
+        <p id="result"></p>
+        <div id="greeting">
+          <h1>Memory Game</h1>
+          <p>Click on a square to reveal it and match it with another!</p>
+        </div>
+        <button id="start">Start Game</button>
+      </div>
+
+      <div class="wrapper">
+        <div class="wrapper-content">
+          <div class="stats-container">
+            <div id="moves-count"></div>
+            <div id="time"></div>
+          </div>
+          <div class="game-container"></div>
+          <button id="stop" class="hide">Reset</button>
+        </div>
+      </div>
     </main>
 
     <footer>
       <nav class="footer-nav">
         <ul class="lalezar-regular">
-          <li><a href="/" class="active">Home</a></li>
-          <li><a href="/memory/">Memory game</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/memory/" class="active">Memory game</a></li>
           <li><a href="/quiz/">Quiz</a></li>
-          <li><a href="/character/">Character creator</a></li>
+          <li><a href="/character/">Character Creator</a></li>
         </ul>
       </nav>
     </footer>

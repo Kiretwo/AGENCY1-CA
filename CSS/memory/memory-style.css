@@ -1,0 +1,176 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  /* *font-family alters footer as well, NEEDS FIX */
+}
+body {
+  background-color: #C0CAD4;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper-content {
+  background-color: #ffffff;
+  box-sizing: content-box;
+  width: 26.87em;
+  padding: 2.5em 3em;
+  margin: 10vh 0em;
+  border-radius: 0.6em;
+  box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2); 
+}
+.game-container {
+  display: grid;
+  width: 100%;
+  gap: 0.6em;
+}
+.stats-container {
+  text-align: center;
+  margin-bottom: 1.2em;
+  font-size: 1.1em;
+}
+.stats-container span{
+  font-weight: 600;
+}
+#time {
+  margin-top: 10px;
+}
+.image {
+  width: 100px;
+  height: auto;
+}
+.card-container {
+  position: relative;
+  width: 6.25em;
+  height: 6.25em;
+  cursor: pointer;
+}
+.card-before, 
+.card-after {
+  position: absolute;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #000000;
+  transition: transform 0.7s ease-out;
+  backface-visibility: hidden;
+}
+.card-before {
+  /*background-color: #f4c531;*/
+  background-color: #448067;
+  font-size: 2.8em;
+  font-weight: 600;
+}
+.card-after {
+  background-color: #ffffff;
+  transform: rotateY(180deg);
+}
+.card-container.flipped .card-before {
+  transform: rotateY(180deg);
+}
+.card-container.flipped .card-after {
+  transform: rotateY(0deg);
+}
+.controls-container {
+  /* !BUG -footer disappears because of overlay- */
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #C0CAD4;
+  z-index: 100;
+}
+button {
+  border: none;
+  border-radius: 0.3em;
+  padding: 1em 1.5em;
+  cursor: pointer;
+  font-weight: 600;
+}
+#stop {
+  font-size: 1.3em;
+  display: block;
+  margin: 1.1em auto 0 auto;
+  padding: 0.7em 3em;
+  background-color: #FFA899;
+  color: #000000;
+  border: 3px solid #000000;
+  border-radius: 12px;
+  font-weight: 700;
+}
+.controls-container button {
+  font-size: 1.3em;
+  box-shadow: 0 0.6em 2em rgba(0, 0, 0, 0.18);
+}
+.hide {
+  display: none;
+}
+#result {
+  text-align: center;
+}
+#result h2 {
+  font-size: 2em;
+}
+#result h4 {
+  font-size: 1.2em;
+  margin: 1em 0 0.4em 0;
+}
+.controls-container h1,
+.controls-container p {
+  margin: 0.5em;
+  text-align: center;
+}
+.controls-container h1 {
+  font-family: "Luckiest Guy", Arial, Helvetica, sans-serif;
+  font-size: 2.3em;
+  color: #262626;
+}
+.controls-container p {
+  font-family: "Lalezar", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 1.5em;
+  margin-bottom: 40px;
+}
+.unselectable {
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+@media screen and (max-width: 700px) {
+  .wrapper-content {
+    width: 20em;
+    gap: 0.2em;
+  }
+  .card-container {
+    width: 4.5em;
+    height: 4.5em;
+  }
+  .image {
+    width: 70px;
+    height: auto;
+  }
+  #stop {
+    font-size: 1.1em;
+    margin: 1.1em auto 0 auto;
+    padding: 0.7em 2.5em;
+    border: 2px solid #000000;
+  }
+  .card-before, 
+  .card-after {
+    border: 3px solid #000000;
+  }
+  .stats-container {
+    font-size: 1em;
+  }
+}
