@@ -55,7 +55,7 @@
             <a class="game" href="/character/">
                 <p class="game-text">Character Creator</p>
             </a>
-            <a class="game" href="#" onclick="selectRandomGame()">
+            <a class="game random" href="#" onclick="selectRandomGame()">
                 <p class="game-text">Random</p>
             </a>
         </div>
@@ -82,10 +82,9 @@
         sidebar.style.display = 'none'
       }
       function selectRandomGame() {
-        const gameLinks = document.querySelectorAll('.game');
-        const filteredGameLinks = Array.from(gameLinks).filter(link => link.textContent !== 'Random');
-        const randomIndex = Math.floor(Math.random() * filteredGameLinks.length);
-        const randomHref = filteredGameLinks[randomIndex].getAttribute('href');
+        const gameLinks = document.querySelectorAll('.game:not(.random)');
+        const randomIndex = Math.floor(Math.random() * gameLinks.length);
+        const randomHref = gameLinks[randomIndex].getAttribute('href');
         window.location.href = randomHref;
       }
     </script>
