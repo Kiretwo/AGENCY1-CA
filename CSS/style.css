@@ -205,10 +205,21 @@ footer nav ul li a:hover {
     footer nav ul {
         flex-direction: column;
     }
-		.hideOnMobile{
-			display: none;
-		}
-		.menu-button{
-			display: block;
-		}
+    
+    .hideOnMobile{
+        display: none;
+    }
+
+    .menu-button{
+        display: block;
+    }
+
+    .grid-container {
+        grid-template-columns: 150px 150px;
+        grid-template-rows: 150px 150px;
+    }
+
+    .game-text{
+        font-size: 1rem;
+    }
 }
