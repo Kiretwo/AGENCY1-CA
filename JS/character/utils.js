@@ -6,16 +6,21 @@ const increaseBtns = document.querySelectorAll(".increaseBtn");
 var male = document.querySelector('.gender:first-child');
 var female = document.querySelector('.gender:last-child');
 
-
 male.addEventListener('click', function() {
-  this.classList.add('active-male');
-  female.classList.remove('active-female');
+  this.classList.toggle('active-male');
+
+  if (this.classList.contains('active-male') && female.classList.contains('active-female')) {
+    female.classList.remove('active-female');
+  }
 });
 
 
 female.addEventListener('click', function() {
-  this.classList.add('active-female');
-  male.classList.remove('active-male');
+  this.classList.toggle('active-female');
+  
+  if (this.classList.contains('active-female') && male.classList.contains('active-male')) {
+    male.classList.remove('active-male');
+  }
 });
 
 // Add click event listener to each increase button
